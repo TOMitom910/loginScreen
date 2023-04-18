@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imgAvatar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -18,20 +18,23 @@
     <TextView
         android:id="@+id/tvNom"
         android:layout_width="200sp"
-        android:layout_height="40sp"
+        android:layout_height="20sp"
         android:layout_marginTop="16dp"
+        android:text="test"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toEndOf="@+id/imgAvatar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPrenom"
         android:layout_width="200sp"
-        android:layout_height="40sp"
+        android:layout_height="20sp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toEndOf="@+id/imgAvatar"
         app:layout_constraintTop_toBottomOf="@+id/tvNom" />
 

@@ -1,4 +1,4 @@
-
+package com.example.loginscreen.services
 import com.example.loginscreen.`class`.User
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

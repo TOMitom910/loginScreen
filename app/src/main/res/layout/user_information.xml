@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--                           AVATAR                           -->
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--                        INFO LEGALE                          -->
+
+    <TextView
+        android:id="@+id/tvLastName"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="LastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="61dp" />
+
+    <TextView
+        android:id="@+id/tvFirstName"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="FirstName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp" />
+
+
+    <!--                           ADDRESS                           -->
+
+    <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Genre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <TextView
+        android:id="@+id/tvBirthdate"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="birthdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="222dp" />
+
+
+    <!--                           COMPANY                           -->
+
+    <TextView
+        android:id="@+id/tvStreet"
+        android:layout_width="100sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Street"
+        app:layout_constraintEnd_toStartOf="@+id/tvCity"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="100sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/tvZipcode"
+        android:layout_width="100sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Zipcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCity"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/tvCompany"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <!--                      ADDRESS COMPANY                        -->
+
+    <TextView
+        android:id="@+id/tvCompanyName"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="355dp" />
+
+    <TextView
+        android:id="@+id/tvCompanyDescription"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <TextView
+        android:id="@+id/tvCompanyAddress"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <TextView
+        android:id="@+id/tvCompanyStreet"
+        android:layout_width="130sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company Street"
+        app:layout_constraintEnd_toStartOf="@+id/tvCompanyCity"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/tvCompanyCity"
+        android:layout_width="100sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/tvCompanyZipcode"
+        android:layout_width="130sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Company Zipcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCompanyCity"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Note User"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="536dp" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="200sp"
+        android:layout_height="20sp"
+        android:gravity="center"
+        android:text="Email"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="611dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,15 +19,15 @@ class UserActivity : AppCompatActivity() {
         userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
         userViewModel.getUsers()
 
-
-
         userViewModel.users.observe(this) {
-            val rvUser = findViewById<RecyclerView>(R.id.rvUsers)
-            Log.d("test entree","je suis rentree")
-            Log.d("test valeur user","${userViewModel.users.value}")
+            if(it.isNotEmpty()) {
+                Log.d("valeur", "${userViewModel.users}")
+                val rvUser = findViewById<RecyclerView>(R.id.rvUsers)
+                val adapter = UserAdapter(this, it)
+                rvUser.adapter = adapter
+            }
 
-            val adapter = UserAdapter(this, it)
-            rvUser.adapter = adapter
         }
+
     }
 }

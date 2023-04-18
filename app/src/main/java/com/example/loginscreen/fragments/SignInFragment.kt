@@ -67,7 +67,7 @@ class SignInFragment : Fragment() {
 
         btnLogin.setOnClickListener()
         {
-            (activity as MainActivity)!!.change_fragment()
+            (activity as MainActivity).change_fragment()
         }
 
         btnSign.setOnClickListener()

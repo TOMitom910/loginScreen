@@ -6,14 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.loginscreen.R
 import com.example.loginscreen.`class`.User
 
-class UserAdapter (val context: Context, val users : List<User>) :
+
+class UserAdapter (val context: Context, var users : List<User>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,10 +37,25 @@ class UserAdapter (val context: Context, val users : List<User>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // create a ProgressDrawable object which we will show as placeholder
+        // create a ProgressDrawable object which we will show as placeholder
+        val drawable = CircularProgressDrawable(context)
+        drawable.setColorSchemeColors(
+            R.color.purple_700,
+            R.color.purple_200,
+            R.color.purple_500
+        )
+        drawable.centerRadius = 30f
+        drawable.strokeWidth = 5f
+        // set all other properties as you would see fit and start it
+        // set all other properties as you would see fit and start it
+        drawable.start()
+
         Glide.with(holder.imgavatar.context)
             .load(users[position].avatar)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .skipMemoryCache(true)
+            .placeholder(drawable)
             .into(holder.imgavatar);
 
         holder.tvnom.text = users[position].firstname

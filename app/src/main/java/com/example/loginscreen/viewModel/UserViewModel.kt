@@ -1,11 +1,11 @@
 package com.example.loginscreen.viewModels
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.loginscreen.`class`.User
+import com.example.loginscreen.services.UserApi
 import kotlinx.coroutines.launch
 
 class UserViewModel : ViewModel() {
@@ -19,18 +19,21 @@ class UserViewModel : ViewModel() {
     fun getUsers() {
         viewModelScope.launch {
             try {
+                Log.d("zaaaaaaaaaaaaaaaaa", "dsfsdfd")
                 users.value = UserApi.retrofitService.getUsers()
                 _status.value = "Success:  Users retrieved"
+               Log.d("bbbbbbbbbbbbbb", "dsfsdfd")
             } catch (e: Exception) {
+               Log.d("bbbbbbbbbbbbbb", e.toString())
                 _status.value = "Failure: ${e.message}"
             }
         }
     }
 
-    fun getUser(id: String) {
+    fun getUser(id: Int) {
         viewModelScope.launch {
             try {
-                currentUser.value = UserApi.retrofitService.getUser(id)
+                currentUser.value = UserApi.retrofitService.getUser(id.toString())
                 _status.value = "Success:  Users retrieved"
             } catch (e: Exception) {
                 _status.value = "Failure: ${e.message}"

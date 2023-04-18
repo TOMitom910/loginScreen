@@ -93,7 +93,7 @@ class LoginFragment : Fragment() {
 
         btnSign.setOnClickListener()
         {
-            (activity as MainActivity)!!.change_fragment()
+            (activity as MainActivity).change_fragment()
         }
 
         }
