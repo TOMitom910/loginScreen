@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +18,17 @@ import com.example.loginscreen.`class`.User
 class UserAdapter (val context: Context, var users : List<User>) :
     RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    private lateinit var mListener : onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener : onItemClickListener){
+
+        mListener = listener
+    }
+
+    class ViewHolder(view: View,listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
         val tvnom: TextView
         val tvprenom: TextView
         val imgavatar : ImageView
@@ -26,6 +37,10 @@ class UserAdapter (val context: Context, var users : List<User>) :
             tvnom = view.findViewById(R.id.tvNom)
             tvprenom = view.findViewById(R.id.tvPrenom)
             imgavatar = view.findViewById(R.id.imgAvatar)
+
+            view.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
         }
     }
 
@@ -33,7 +48,7 @@ class UserAdapter (val context: Context, var users : List<User>) :
         val rowView = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.user_list_item, viewGroup, false)
 
-        return ViewHolder(rowView)
+        return ViewHolder(rowView,mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -63,4 +78,5 @@ class UserAdapter (val context: Context, var users : List<User>) :
     }
 
     override fun getItemCount() = users.size
+
 }
