@@ -21,7 +21,6 @@ class UserActivity : AppCompatActivity() {
 
         userViewModel.users.observe(this) {
             if(it.isNotEmpty()) {
-                Log.d("valeur", "${userViewModel.users}")
                 val rvUser = findViewById<RecyclerView>(R.id.rvUsers)
                 val adapter = UserAdapter(this, it)
                 rvUser.adapter = adapter

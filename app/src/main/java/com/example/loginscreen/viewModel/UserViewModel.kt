@@ -22,7 +22,7 @@ class UserViewModel : ViewModel() {
                 Log.d("zaaaaaaaaaaaaaaaaa", "dsfsdfd")
                 users.value = UserApi.retrofitService.getUsers()
                 _status.value = "Success:  Users retrieved"
-               Log.d("bbbbbbbbbbbbbb", "dsfsdfd")
+               Log.d("bbbbbbbbbbbbbb", "${users.value}")
             } catch (e: Exception) {
                Log.d("bbbbbbbbbbbbbb", e.toString())
                 _status.value = "Failure: ${e.message}"

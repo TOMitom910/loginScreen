@@ -1,5 +1,4 @@
 package com.example.loginscreen.`class`
-import android.provider.ContactsContract.CommonDataKinds.Email
 import com.squareup.moshi.Json
 
 @Json
@@ -9,9 +8,9 @@ data class User(
     val lastname: String,
     val birthdate: String,
     val genre: String,
-    val avatar: String,
-    val company: Company,
-    val info : String,
     val address: Address,
-    val email: Email
+    val company: Company,
+    val avatar: String,
+    val note: String,
+    val email: String
 )
