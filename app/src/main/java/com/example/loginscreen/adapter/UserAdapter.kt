@@ -15,17 +15,14 @@ import com.example.loginscreen.R
 import com.example.loginscreen.`class`.User
 
 
-class UserAdapter (val context: Context, var users : List<User>) :
-    RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter (val context: Context, var users : List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
-    private lateinit var mListener : onItemClickListener
+    lateinit var mListener : onItemClickListener
     interface onItemClickListener{
         fun onItemClick(position: Int)
     }
-
     fun setOnItemClickListener(listener : onItemClickListener){
-
-        mListener = listener
+       mListener = listener
     }
 
     class ViewHolder(view: View,listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
@@ -43,10 +40,8 @@ class UserAdapter (val context: Context, var users : List<User>) :
             }
         }
     }
-
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        val rowView = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.user_list_item, viewGroup, false)
+        val rowView = LayoutInflater.from(viewGroup.context).inflate(R.layout.user_list_item, viewGroup, false)
 
         return ViewHolder(rowView,mListener)
     }

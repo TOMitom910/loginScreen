@@ -5,6 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 private const val BASE_URL =
@@ -36,6 +37,9 @@ interface UserApiService {
      */
     @GET("USER")
     suspend fun getUsers() : List<User>
+
+    @POST("login")
+    suspend fun postUser(pseudo : String,password : String)
 
     /**
      * Returns a [User] and this method can be called from a Coroutine.

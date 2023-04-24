@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <shape>
+
             <gradient
                 android:startColor="@color/violet_clair"
                 android:centerColor="@color/grey"
                 android:endColor="@color/teal_200"
                 android:type="linear"
-                android:angle="225"
+                android:angle="90"
+                />
+
+            <stroke
+                android:width="1dp"
+                android:color="@color/white"
+                />
+            <corners
+                android:radius="20dp"
                 />
         </shape>
     </item>
+
 </selector>

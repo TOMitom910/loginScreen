@@ -1,4 +1,4 @@
-package com.example.loginscreen.viewModels
+package com.example.loginscreen.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -34,6 +34,18 @@ class UserViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 currentUser.value = UserApi.retrofitService.getUser(id.toString())
+                _status.value = "Success:  Users retrieved"
+            } catch (e: Exception) {
+                _status.value = "Failure: ${e.message}"
+            }
+        }
+    }
+
+    fun postUser(pseudo : String,password : String)
+    {
+        viewModelScope.launch {
+            try {
+                UserApi.retrofitService.postUser(pseudo,password)
                 _status.value = "Success:  Users retrieved"
             } catch (e: Exception) {
                 _status.value = "Failure: ${e.message}"

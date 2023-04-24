@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,9 @@ import com.example.loginscreen.R
 import com.example.loginscreen.UserActivity
 import com.example.loginscreen.factory.MainActivityViewModelFactory
 import com.example.loginscreen.viewModel.MainActivityViewModel
+import javax.crypto.Cipher
+import javax.crypto.KeyGenerator
+import javax.crypto.SecretKey
 
 class LoginFragment : Fragment() {
 
@@ -75,15 +79,34 @@ class LoginFragment : Fragment() {
             {
                 if (TextUtils.isEmpty(pseudo.text))
                 {
-                    pseudo.error = "le pseudo ne peut pas etre null"
+                    pseudo.error = "U need to fill the username"
                 }
                 if (TextUtils.isEmpty(password.text))
                 {
-                    password.error = "le pseudo ne peut pas etre null"
+                    password.error = "U need to fill the password"
                 }
                 if(!TextUtils.isEmpty(pseudo.text) && !TextUtils.isEmpty(password.text))
                 {
-                    Toast.makeText(activity,"connexion reussie", Toast.LENGTH_SHORT).show()
+
+                    val mdp = password.text.toString()
+                    val pseudonyme = pseudo.text.toString()
+
+                    Log.d("valeur mdp : ", mdp)
+
+                    val plaintext: ByteArray = mdp.toByteArray()
+
+
+                    val keygen = KeyGenerator.getInstance("HmacSHA256")
+                    keygen.init(256)
+                    val key: SecretKey = keygen.generateKey()
+
+                    val cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING")
+                    cipher.init(Cipher.ENCRYPT_MODE, key)
+                    val ciphertext: ByteArray = cipher.doFinal(plaintext)
+
+                    Log.d("PASSWORD1: ", ciphertext.toString())
+
+                    Toast.makeText(activity,"successful connection", Toast.LENGTH_SHORT).show()
                     var i = Intent(activity,UserActivity::class.java)
                     startActivity(i)
 
