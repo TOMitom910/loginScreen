@@ -122,7 +122,7 @@
         android:id="@+id/tvCompany"
         android:layout_width="200sp"
         android:layout_height="20sp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Company"
         android:textStyle="bold"
@@ -159,7 +159,7 @@
 
     <LinearLayout
         android:background="@drawable/block_zone"
-
+        app:layout_goneMarginTop="10dp"
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -220,6 +220,7 @@
         android:layout_width="400sp"
         android:layout_height="75sp"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="Note User"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
